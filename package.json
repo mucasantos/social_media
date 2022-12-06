@@ -2,13 +2,28 @@
   "name": "social_media",
   "version": "1.0.0",
   "description": "API for studying nodejs, mongoDB and React",
-  "main": "backend/index.js",
+  "main": "server/index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Samuel Santos 12/2022",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.0",
+    "compression": "^1.7.4",
+    "cookie-parse": "^0.4.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "helmet": "^6.0.1",
+    "lodash": "^4.17.21",
+    "mongodb": "^4.12.1",
+    "mongoose": "^6.8.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-node-externals": "^3.0.0"
   }
 }
