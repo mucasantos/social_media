@@ -1,0 +1,14 @@
+{
+  "name": "social_media",
+  "version": "1.0.0",
+  "description": "API for studying nodejs, mongoDB and React",
+  "main": "backend/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samuel Santos 12/2022",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
