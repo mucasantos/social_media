@@ -19,24 +19,9 @@ app.use(helmet())
 app.use(cors())
 
 
-app.get('/', (req, res, next) => {
-    res.status(200).send(Template())
-})
+import userRoutes from './../server/routes/user.route.js' 
 
-app.get('/save-user', (req, res, next) => {
-
-    const user = new User(
-        {
-            email: "samuca@email.com",
-            name: "Samuel Santos",
-            salt: "123456",
-            hashed_password: "123456"
-        }
-    )
-    user.save().then((result) => {
-        res.send(Template(result))
-    })
-})
+app.use('/', userRoutes)
 
 
 export default app
