@@ -3,7 +3,7 @@ node_modules
 /.pnp
 .pnp.js
 .env
-db_link.js
+project.js
 # testing
 /coverage
 
