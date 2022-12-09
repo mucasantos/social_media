@@ -1,4 +1,4 @@
-import  data  from "../project_data_secret.js"
+import  data  from "../project.js"
 
 
 

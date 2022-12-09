@@ -61,7 +61,29 @@ const read = (req, res) => {
     return res.json(req.profile) 
 }
 
-const update = (req, res, next) => { }
-const remove = (req, res, next) => { }
+const update = (req, res, next) => {
+    let user = req.profile
+    user = extend(user, req.body)
+    
+    user.updated = Date.now()
+
+    user.save().then((result) => {
+        user.hashed_password = undefined
+        user.salt = undefined
+        res.json(result)
+    }).catch((error)=> {
+        res.json(error)
+    })
+
+ }
+const remove = (req, res, next) => {
+    let user = req.profile
+
+    User.findByIdAndDelete(user.id).then((result) => {
+        res.json(result)
+    }).catch((error)=> {
+        res.json(error)
+    })
+ }
 
 export default { create, userByID, read, list, remove, update } 
