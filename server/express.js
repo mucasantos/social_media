@@ -20,8 +20,10 @@ app.use(cors())
 
 
 import userRoutes from './../server/routes/user.route.js' 
+import authRoutes from './../server/routes/auth.route.js' 
 
 app.use('/', userRoutes)
+app.use('/', authRoutes)
 
 
 export default app
