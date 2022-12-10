@@ -42,7 +42,7 @@ const userByID = (req, res, next, id) => {
         User.findById(id).then((user) => {
 
             console.log(user)
-            if (!user) return res.status('400').json({
+            if (!user) return res.status(400).json({
                 error: "User not found"
             })
             req.profile = user
@@ -50,7 +50,7 @@ const userByID = (req, res, next, id) => {
         })
 
     } catch (err) {
-        return res.status('400').json({
+        return res.status(400).json({
             error: "Could not retrieve user"
         })
     }

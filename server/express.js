@@ -7,7 +7,8 @@ import helmet from 'helmet'
 
 import Template from './../template.js'
 import User from './../server/models/user.js'
-
+import userRoutes from './../server/routes/user.route.js'
+import authRoutes from './../server/routes/auth.route.js'
 
 
 const app = express()
@@ -18,12 +19,14 @@ app.use(compress())
 app.use(helmet())
 app.use(cors())
 
-
-import userRoutes from './../server/routes/user.route.js' 
-import authRoutes from './../server/routes/auth.route.js' 
-
 app.use('/', userRoutes)
 app.use('/', authRoutes)
 
+app.use((err, req, res, next) => {
+    if (err.name === 'UnauthorizedError') { res.status(401).json({ "error": err.name + ": " + err.message }) } else if (err) {
+        res.status(400).json({ "error": err.name + ": " + err.message })
+        console.log(err)
+    }
+})
 
 export default app
